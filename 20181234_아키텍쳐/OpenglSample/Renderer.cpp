@@ -1,12 +1,12 @@
 #include "Renderer.h"
 
-int Renderer::init()
+void Renderer::init()
 {
 	if (!glfwInit())
 	{
 		fprintf(stderr, "Failed to initialize GLFW\n");
 		getchar();
-		return -1;
+		return;
 	}
 
 	glfwWindowHint(GLFW_SAMPLES, 4);
@@ -20,7 +20,7 @@ int Renderer::init()
 		fprintf(stderr, "Failed to open GLFW window. If you have an Intel GPU, they are not 3.3 compatible. Try the 2.1 version of the tutorials.\n");
 		getchar();
 		glfwTerminate();
-		return -1;
+		return;
 	}
 	glfwMakeContextCurrent(window);
 
@@ -34,7 +34,7 @@ int Renderer::init()
 		fprintf(stderr, "Failed to initialize GLEW\n");
 		getchar();
 		glfwTerminate();
-		return -1;
+		return;
 	}
 
 	glfwSetInputMode(window, GLFW_STICKY_KEYS, GL_TRUE);
@@ -58,8 +58,6 @@ void Renderer::setObject(Object* obj)
 
 void Renderer::renderer()
 {
-	do {
-
 		glm::mat4 MVP = Projection * View * Model;
 
 		// Clear the screen
@@ -112,17 +110,5 @@ void Renderer::renderer()
 		glfwSwapBuffers(window);
 		glfwPollEvents();
 
-	} // Check if the ESC key was pressed or the window was closed
-	while (glfwGetKey(window, GLFW_KEY_ESCAPE) != GLFW_PRESS &&
-		glfwWindowShouldClose(window) == 0);
+} // Check if the ESC key was pressed or the window was closed
 
-	// Cleanup VBO and shader
-	glDeleteBuffers(1, &vertexbuffer);
-	glDeleteBuffers(1, &uvbuffer);
-	glDeleteProgram(programID);
-	glDeleteTextures(1, &Texture);
-	glDeleteVertexArrays(1, &VertexArrayID);
-
-	// Close OpenGL window and terminate GLFW
-	glfwTerminate();
-}

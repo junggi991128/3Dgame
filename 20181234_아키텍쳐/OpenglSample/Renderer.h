@@ -6,7 +6,7 @@ class Renderer : public Object {
 private:
 	Object* object;
 public:
-	int init();
+	void init();
 	void setObject(Object* obj);
 	void renderer();
 };

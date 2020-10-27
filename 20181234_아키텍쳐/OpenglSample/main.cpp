@@ -12,8 +12,11 @@ int main(void)
 	cube->setProgramID(fileManager->LoadShaders("vs.shader", "fs.shader"));
 	cube->setTexture(fileManager->loadDDS("uvtemplate.DDS"));
 	
-	renderer->setObject(cube); 
-	renderer->renderer();
+	renderer->setObject (cube);
+	while (true)
+	{
+		renderer->renderer();
+	}
 
 	delete fileManager;
 	delete cube;
