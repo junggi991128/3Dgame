@@ -27,12 +27,11 @@ public:
 	glm::mat4 View;
 	glm::mat4 Model;
 	glm::mat4 MVP;
-	GLuint TextureID;
-	GLuint vertexbuffer;
 	GLuint uvbuffer;
 	GLuint VertexArrayID;
+	GLuint TextureID;
+	GLuint vertexbuffer;
 public:
-	Object();
 	void setTexture(GLuint loadDDS);
 	void setProgramID(GLuint LoadShaders);
 };

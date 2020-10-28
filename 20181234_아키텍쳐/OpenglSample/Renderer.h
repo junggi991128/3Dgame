@@ -3,9 +3,8 @@
 
 
 class Renderer : public Object {
-private:
-	Object* object;
 public:
+	Object* object;
 	void init();
 	void setObject(Object* obj);
 	void renderer();
