@@ -5,8 +5,10 @@ class FPS {
 public:
 	void startFPS();
 	void endFPS();
-	float getFPS();
+	double getTime();
+	//double getFrame();
 private:
-	float DeltaTime;
+	//int frame;
+	double DeltaTime;
 	LARGE_INTEGER timer, start, end;
 };

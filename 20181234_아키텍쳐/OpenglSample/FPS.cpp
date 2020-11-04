@@ -4,16 +4,22 @@ void FPS::startFPS()
 {
 	QueryPerformanceFrequency(&timer);
 	QueryPerformanceCounter(&start);
+	//frame =	timer / 60;
 }
 
 void FPS::endFPS()
 {
 	QueryPerformanceCounter(&end);
 
-	DeltaTime = (start.QuadPart - end.QuadPart);
+	DeltaTime = (end.QuadPart - start.QuadPart);
 }
 
-float FPS::getFPS()
+double FPS::getTime()
 {
 	return DeltaTime;
 }
+
+//double FPS::getFrame()
+//{
+//	return frame;
+//}

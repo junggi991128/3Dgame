@@ -171,6 +171,20 @@ bool Renderer::renderTime()
 	return true;
 }
 
+
+bool Renderer::UpdateTime()
+{
+	//if (getTime() > getFrame)
+	//{
+	//	return true;
+	//}
+	//else
+	//{
+	//	return false;
+	//}
+	return true;
+}
+
 void Renderer::renderer()
 {
 	startFPS();

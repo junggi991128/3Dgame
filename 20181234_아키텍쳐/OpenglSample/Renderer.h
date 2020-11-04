@@ -9,5 +9,6 @@ public:
 	void init();
 	void setObject(Object* obj);
 	bool renderTime();
+	bool UpdateTime();
 	void renderer();
 };

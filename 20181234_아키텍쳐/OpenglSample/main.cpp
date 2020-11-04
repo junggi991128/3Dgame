@@ -19,6 +19,10 @@ int main(void)
 		{
 			renderer->renderer();
 		}
+		if (renderer->UpdateTime())
+		{
+			//renderer->Update();
+		}
 	}
 
 	delete fileManager;
