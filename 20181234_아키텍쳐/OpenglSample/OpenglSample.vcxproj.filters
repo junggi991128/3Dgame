@@ -27,6 +27,9 @@
     <ClCompile Include="Object.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="FPS.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="fs.shader">
@@ -44,6 +47,9 @@
       <Filter>소스 파일</Filter>
     </ClInclude>
     <ClInclude Include="Renderer.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="FPS.h">
       <Filter>소스 파일</Filter>
     </ClInclude>
   </ItemGroup>

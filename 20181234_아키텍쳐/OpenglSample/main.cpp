@@ -1,11 +1,14 @@
 #include"FileManager.h"
 #include"Object.h"
 #include"Renderer.h"
+#include"FPS.h"
 
 int main(void)
 {
+	FPS* fps = new FPS();
 	Renderer* renderer = new Renderer();
 	renderer->init();
+	fps->setFPS();
 
 	FileManager* fileManager = new FileManager();
 	Object* cube = new Object();
@@ -15,12 +18,16 @@ int main(void)
 	renderer->setObject (cube);
 	while (true)
 	{
-		renderer->renderer();
+		while (fps->getFPS() <= 16) {
+
+			renderer->renderer();
+		}
 	}
 
 	delete fileManager;
 	delete cube;
 	delete renderer;
+	delete fps;
 
 	return 0;
 } 
