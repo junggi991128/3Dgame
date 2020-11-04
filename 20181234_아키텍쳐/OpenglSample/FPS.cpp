@@ -1,11 +1,19 @@
 #include "FPS.h"
 
-void FPS::setFPS()
+void FPS::startFPS()
 {
-	StartTick = GetTickCount64();
+	QueryPerformanceFrequency(&timer);
+	QueryPerformanceCounter(&start);
 }
 
-int FPS::getFPS()
+void FPS::endFPS()
 {
-	return GetTickCount64() - StartTick;
+	QueryPerformanceCounter(&end);
+
+	DeltaTime = (start.QuadPart - end.QuadPart);
+}
+
+float FPS::getFPS()
+{
+	return DeltaTime;
 }

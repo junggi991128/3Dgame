@@ -3,8 +3,10 @@
 
 class FPS {
 public:
-	void setFPS();
-	int getFPS();
+	void startFPS();
+	void endFPS();
+	float getFPS();
 private:
-	int StartTick;
+	float DeltaTime;
+	LARGE_INTEGER timer, start, end;
 };

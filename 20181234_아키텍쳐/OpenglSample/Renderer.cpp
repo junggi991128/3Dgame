@@ -166,8 +166,14 @@ void Renderer::setObject(Object* obj)
 	glBufferData(GL_ARRAY_BUFFER, sizeof(g_uv_buffer_data), g_uv_buffer_data, GL_STATIC_DRAW);
 }
 
+bool Renderer::renderTime()
+{
+	return true;
+}
+
 void Renderer::renderer()
 {
+	startFPS();
 	glm::mat4 MVP = object->Projection * object->View * object->Model;
 
 	// Clear the screen
@@ -219,6 +225,6 @@ void Renderer::renderer()
 	// Swap buffers
 	glfwSwapBuffers(window);
 	glfwPollEvents();
-
+	endFPS();
 } // Check if the ESC key was pressed or the window was closed
 
