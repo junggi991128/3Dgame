@@ -185,9 +185,17 @@ bool Renderer::UpdateTime()
 	return true;
 }
 
+void Renderer::update()
+{
+	startTime();
+
+	//update ÄÚµå
+
+	endTime();
+}
+
 void Renderer::renderer()
 {
-	startFPS();
 	glm::mat4 MVP = object->Projection * object->View * object->Model;
 
 	// Clear the screen
@@ -239,6 +247,5 @@ void Renderer::renderer()
 	// Swap buffers
 	glfwSwapBuffers(window);
 	glfwPollEvents();
-	endFPS();
 } // Check if the ESC key was pressed or the window was closed
 

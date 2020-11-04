@@ -11,4 +11,5 @@ public:
 	bool renderTime();
 	bool UpdateTime();
 	void renderer();
+	void update();
 };

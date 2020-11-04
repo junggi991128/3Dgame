@@ -21,7 +21,7 @@ int main(void)
 		}
 		if (renderer->UpdateTime())
 		{
-			//renderer->Update();
+			renderer->update();
 		}
 	}
 

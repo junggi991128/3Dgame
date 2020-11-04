@@ -3,8 +3,8 @@
 
 class FPS {
 public:
-	void startFPS();
-	void endFPS();
+	void startTime();
+	void endTime();
 	double getTime();
 	//double getFrame();
 private:

@@ -1,13 +1,13 @@
 #include "FPS.h"
 
-void FPS::startFPS()
+void FPS::startTime()
 {
 	QueryPerformanceFrequency(&timer);
 	QueryPerformanceCounter(&start);
 	//frame =	timer / 60;
 }
 
-void FPS::endFPS()
+void FPS::endTime()
 {
 	QueryPerformanceCounter(&end);
 
