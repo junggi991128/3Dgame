@@ -1,6 +1,7 @@
 #include"FileManager.h"
 #include"Object.h"
 #include"Renderer.h"
+#include"Template.h"
 
 int main(void)
 {
@@ -8,11 +9,11 @@ int main(void)
 	renderer->init();
 
 	FileManager* fileManager = new FileManager();
-	Object* cube = new Object();
+	Object* cube = new Template();
 	cube->setProgramID(fileManager->LoadShaders("vs.shader", "fs.shader"));
 	cube->setTexture(fileManager->loadDDS("uvtemplate.DDS"));
 	
-	renderer->setObject (cube);
+	renderer->setObject(cube);
 	while (true)
 	{
 		if (renderer->renderTime())
