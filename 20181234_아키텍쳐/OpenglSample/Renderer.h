@@ -8,8 +8,6 @@ public:
 	Object* object;
 	void init();
 	bool renderTime();
-	bool UpdateTime();
 	void renderer();
-	void update();
 	void setObject(Object* obj);
 };
